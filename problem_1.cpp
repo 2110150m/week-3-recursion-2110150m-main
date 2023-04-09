@@ -2,24 +2,27 @@
 
 using namespace std;
 
-int sum_of_digits(int n)
-{
-    if (n == 0)
-    {
-      return 0;
-  
-    } else
+int SumOfDigits(int n) {
+    int sum = 0;
+    int digit;
+    int temp = n;
 
-    return (n % 10) + sum_of_digits(n/10);
+    while (temp != 0) {
+        digit = temp % 10;  
+        sum += digit;      
+        temp /= 10;        
+    }
 
-    
+    return sum;
 }
+
+  
 
 int main()
 {
     int n;
     cout<<"Enter the number: ";
     cin >> n;
-    cout <<"The sum of digits is: "<< sum_of_digits(n);
+    cout <<"The sum of digits is: "<< SumOfDigits(n);
     
 }
